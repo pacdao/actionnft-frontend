@@ -1,0 +1,198 @@
+{
+  "contracts": {
+    "ActionNFT": "509d69c68817c6990afe54a83d9f1e9eeb647cf1",
+    "ActionNFTRare": "ad4ba2ff67fb11f4f2ff14ac048972144c3e7f41",
+    "Address": "1ce946f6a4eaa185320328620ccf999b9e86db7c",
+    "ERC721": "07c8c3b2016cc2fe0fb709779ab1e6ea94265f5f",
+    "Strings": "1ce946f6a4eaa185320328620ccf999b9e86db7c"
+  },
+  "tests": {
+    "scripts/brownie/tests/test_auction.py": {
+      "coverage": false,
+      "isolated": [
+        "ActionNFTRare",
+        "ERC721"
+      ],
+      "results": ".................",
+      "sha1": "6f2581a7a7aaad4c03478c6d6ef75a92eff0af8e",
+      "txhash": [
+        "037bd1e7d29f55e3d0951a55d87a261e698d8448",
+        "3d1a45ef2c5c9eb596019587c2d6614c1793d2c6",
+        "f932e581ca408939d51fec7c7c7e06b36414b472"
+      ]
+    },
+    "scripts/brownie/tests/test_deposit.py": {
+      "coverage": false,
+      "isolated": [
+        "ActionNFT",
+        "ERC721"
+      ],
+      "results": ".....................",
+      "sha1": "59ca9cd7e7621fb0c29fc25a6a7b6a1550e26215",
+      "txhash": [
+        "289447fd60f53d067d618e8a15f3116598b1cea2",
+        "2ca897b8457113a20b13ddacfb0ba8bcbd041f32",
+        "30c271a4d0a6fd32d2e349529d71a72ee9b6478f",
+        "3f3861237522c5fe0669c69bb8162beaba8c084c",
+        "42f575c79ef9220ad79c56075060813c72e75c3c",
+        "73502ae25898ca174054c7a8c2a75f69109d90fb",
+        "e522615cef177e60050b413bc98afabec0bb8fc5"
+      ]
+    }
+  },
+  "tx": {
+    "037bd1e7d29f55e3d0951a55d87a261e698d8448": {
+      "ActionNFTRare": {
+        "0": [
+          [
+            35
+          ],
+          [
+            122
+          ],
+          []
+        ]
+      }
+    },
+    "289447fd60f53d067d618e8a15f3116598b1cea2": {
+      "ActionNFT": {
+        "0": [
+          [],
+          [],
+          []
+        ],
+        "2": [
+          [],
+          [],
+          []
+        ]
+      }
+    },
+    "2ca897b8457113a20b13ddacfb0ba8bcbd041f32": {
+      "ActionNFT": {
+        "0": [
+          [],
+          [],
+          []
+        ]
+      }
+    },
+    "30c271a4d0a6fd32d2e349529d71a72ee9b6478f": {
+      "ActionNFT": {
+        "0": [
+          [],
+          [],
+          []
+        ]
+      }
+    },
+    "3d1a45ef2c5c9eb596019587c2d6614c1793d2c6": {
+      "ActionNFTRare": {
+        "0": [
+          [
+            49
+          ],
+          [
+            123
+          ],
+          []
+        ],
+        "2": [
+          [],
+          [],
+          []
+        ]
+      }
+    },
+    "3f3861237522c5fe0669c69bb8162beaba8c084c": {
+      "ActionNFT": {
+        "0": [
+          [],
+          [],
+          []
+        ],
+        "2": [
+          [],
+          [],
+          []
+        ]
+      }
+    },
+    "42f575c79ef9220ad79c56075060813c72e75c3c": {
+      "ActionNFT": {
+        "0": [
+          [
+            3,
+            22,
+            37,
+            38,
+            39,
+            40
+          ],
+          [
+            120
+          ],
+          []
+        ],
+        "2": [
+          [],
+          [],
+          []
+        ]
+      }
+    },
+    "73502ae25898ca174054c7a8c2a75f69109d90fb": {
+      "ActionNFT": {
+        "0": [
+          [
+            47
+          ],
+          [
+            127
+          ],
+          []
+        ],
+        "2": [
+          [],
+          [],
+          []
+        ]
+      }
+    },
+    "e522615cef177e60050b413bc98afabec0bb8fc5": {
+      "ActionNFT": {
+        "0": [
+          [],
+          [],
+          []
+        ],
+        "2": [
+          [],
+          [],
+          []
+        ]
+      }
+    },
+    "f932e581ca408939d51fec7c7c7e06b36414b472": {
+      "ActionNFTRare": {
+        "0": [
+          [
+            49,
+            50
+          ],
+          [
+            124
+          ],
+          [
+            123
+          ]
+        ],
+        "2": [
+          [],
+          [],
+          []
+        ]
+      }
+    }
+  }
+}
