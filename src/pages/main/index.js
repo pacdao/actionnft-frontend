@@ -32,7 +32,7 @@ const Main = () => {
     }
   }, [account]);
 
-  const [tabValue, setTabValue] = React.useState(1);
+  const [tabValue, setTabValue] = React.useState(0);
 
   return (
     <Grid className={classes.root} container>
