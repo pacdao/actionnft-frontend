@@ -22,7 +22,7 @@ function App() {
 
   const isCorrectChain = React.useMemo(() => {
     // TODO: change to correct network once it is ready
-    return chainId !== null && chainId === 4;
+    return chainId !== null && chainId === 1;
   }, [chainId]);
 
   return (
@@ -42,7 +42,7 @@ function App() {
         )}
         {provider && !isCorrectChain && (
           <Grid container justifyContent="center">
-            <Alert severity="error">Please switch to Rinkeby.</Alert>
+            <Alert severity="error">Please switch to Ethereum Mainnet.</Alert>
           </Grid>
         )}
         {provider && isCorrectChain && <Main />}
