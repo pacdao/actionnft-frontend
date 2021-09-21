@@ -5,7 +5,8 @@ import Container from "@material-ui/core/Container";
 import Main from "pages/main";
 import Header from "components/Header";
 import Footer from "components/Footer";
-import { Grid, makeStyles } from "@material-ui/core";
+import pacImageCommon from "assets/hendlinCommon.jpg";
+import { Grid, Grow, makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -31,6 +32,14 @@ function App() {
       <Container maxWidth="lg" className={classes.root}>
         {!provider && (
           <Grid container justifyContent="center">
+
+      <Grid item xs={12} container justifyContent="center">
+        <Grow in disableStrictModeCompat style={{ transformOrigin: "0 0 0 0" }} timeout={1000}>
+          <img style={{'max-width': '400px'}} className={classes.img} alt="PAC Crypto Activism NFT" src={pacImageCommon} />
+        </Grow>
+      </Grid>
+
+
             <Alert severity="error">
               Please install{" "}
               <a href="https://metamask.io/" target="_blank" rel="noreferrer">
@@ -38,6 +47,10 @@ function App() {
               </a>{" "}
               first.
             </Alert>
+
+
+
+
           </Grid>
         )}
         {provider && !isCorrectChain && (
