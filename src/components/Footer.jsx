@@ -61,15 +61,15 @@ const Footer = () => {
           and any other public PAC forums, including content such as proposals
           supported by PAC, the PAC Pro-Crypto Scorecard, and Bills and
           Campaigns discussed by PAC, are for informational purposes only. The
-          Founding Member NFT is obtained by supporters of PAC “as is” and
+          Founding Member and Action NFTs obtained by supporters of PAC “as is” and
           without warranties of any kind. PAC is not liable for any harm caused
-          by participation therein, or by obtaining a Founding Member NFT. By
-          obtaining the Founding Member NFT, you agree that you are not
+          by participation therein, or by obtaining an NFT. By
+          obtaining an NFT, you agree that you are not
           obtaining a security or investment instrument, you have undertaken
           your own review of laws applicable to you in your jurisdiction and
           confirm that your action is permissible under such applicable laws and
-          you are obtaining the Founding Member NFT for your own account without
-          intent to distribute the Founding Member NFT to third parties.
+          you are obtaining the  NFT for your own account without
+          intent to distribute the  NFT to third parties.
         </Typography>
       </Grid>
     </Grid>
