@@ -6,7 +6,7 @@ import { Grid, Grow, TextField, Typography } from "@material-ui/core";
 import { useEthersProvider } from "contexts/EthersContext";
 import deploymentMap from "artifacts/deployments/map.json";
 import { TYPE } from "utils";
-import pacImageCommon from "assets/commonNFT.png";
+import pacImageCommon from "assets/hendlinCommon.jpg";
 import ProgressBtn from "components/ProgressBtn";
 import Alerts from "components/Mint/Alerts";
 import { getABI } from "pages/main";

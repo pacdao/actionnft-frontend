@@ -18,7 +18,7 @@ import {
 import { useEthersProvider } from "contexts/EthersContext";
 import deploymentMap from "artifacts/deployments/map.json";
 import { TYPE } from "utils";
-import pacImageRare from "assets/rareNFT.png";
+import pacImageRare from "assets/hendlinRare.jpg";
 import ProgressBtn from "components/ProgressBtn";
 import Alerts from "components/Mint/Alerts";
 import { getABI } from "pages/main";
