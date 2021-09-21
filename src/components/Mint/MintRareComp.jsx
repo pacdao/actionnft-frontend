@@ -140,7 +140,7 @@ const MintRareComp = () => {
         <Grid container justifyContent="center" alignItems="stretch" style={{ margin: "16px 0" }}>
           <TextField
             className={classes.textfield}
-            label="Your Bid"
+            label="Your Bid (units of .01)"
             variant="outlined"
             onChange={({ target: { value } }) => {
               dispatchSuccess({ bidPrice: value });
@@ -185,7 +185,7 @@ const MintRareComp = () => {
                   })}
                 </TableBody>
                 <caption>
-                  *The top five bidders will get to take home a copy of this rare artwork. All else can claim a 90%
+                  *The top five bidders will get to take home a copy of this rare artwork. All else can claim a 100%
                   refund within 30 days of auction end.
                   <br />
                   <Button
