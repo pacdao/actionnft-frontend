@@ -55,6 +55,9 @@ function App() {
 	  <strong>'The War on Crypto'</strong> features award-winning American artist <strong><a style={{color: '#000'}} href='https://www.rebeccahendin.com/' target='_blank'>Rebecca Hendin</a></strong>, whose art is regularly featured in BBC, and The Guardian. This limited series reflects the current state of US politics and their overarching stranglehold on crypto innovation.
 
 		<br/><br/>
+		All funds towards the Action NFT are used to incentivize politicians to advocate for crypto in DC.  Make your voice heard!
+
+		<br/><br/>
 		Connect A Web3 Provider Like MetaMask to Learn More
 		</center>
 		</Typography>

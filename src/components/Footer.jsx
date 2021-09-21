@@ -54,22 +54,8 @@ const Footer = () => {
       </Grid>
       <Grid item xs={12} style={{ padding: "1rem" }}>
         <Typography variant="caption">
-          People Advocating for Crypto is a grassroots issue based activism DAO
-          dedicated to furthering crypto adoption worldwide. PAC is not a
-          Political Action Committee, and nothing expressed in PAC’s website or
-          other public forums shall be construed as such. Further, this website
-          and any other public PAC forums, including content such as proposals
-          supported by PAC, the PAC Pro-Crypto Scorecard, and Bills and
-          Campaigns discussed by PAC, are for informational purposes only. The
-          Founding Member and Action NFTs obtained by supporters of PAC “as is” and
-          without warranties of any kind. PAC is not liable for any harm caused
-          by participation therein, or by obtaining an NFT. By
-          obtaining an NFT, you agree that you are not
-          obtaining a security or investment instrument, you have undertaken
-          your own review of laws applicable to you in your jurisdiction and
-          confirm that your action is permissible under such applicable laws and
-          you are obtaining the  NFT for your own account without
-          intent to distribute the  NFT to third parties.
+         People Advocating for Crypto is a grassroots issue based activism DAO dedicated to furthering crypto adoption worldwide. PAC is not a Political Action Committee, and nothing expressed in PAC’s website or other public forums shall be construed as such. Further, this website and any other public PAC forums, including content such as proposals supported by PAC, the PAC Pro-Crypto Scorecard, and Bills and Campaigns discussed by PAC, are for informational purposes only. Any NFTs obtained by supporters of PAC are “as is” and without warranties of any kind. PAC is not liable for any harm caused by participation therein, or by obtaining an NFT. By obtaining an NFT, you agree that you are not obtaining a security or investment instrument, you have undertaken your own review of laws applicable to you in your jurisdiction and confirm that your action is permissible under such applicable laws and you are obtaining an NFT for your own account without intent to distribute the NFT to third parties.
+
         </Typography>
       </Grid>
     </Grid>
