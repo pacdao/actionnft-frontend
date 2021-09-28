@@ -1,4 +1,20 @@
-# Getting Started with Create React App
+# Action NFT Frontend
+
+The frontend for Pac DAO NFT 1
+
+* [🌐  Web](https://pac.xyz/)
+* [🎮  Discord ](https://discord.gg/tbBKXQqm)
+* [🛫  Telegram ](https://t.me/joinchat/VYYqN19O3Wc4OTZh)
+* [🦅  Twitter](https://twitter.com/pacdao)
+
+This frontend was deployed permanently to IPFS via Fleek for the first Action NFT sale: [https://orange-lake-2728.on.fleek.co/](https://orange-lake-2728.on.fleek.co/)
+
+Further Reading
+* [An Introduction to PAC DAO](https://pacdao.substack.com/p/an-introduction-to-pac-dao)
+* [The Art of Applying Force](https://pacdao.substack.com/p/the-art-of-applying-force)
+* [The War on Crypto](https://pacdao.substack.com/p/the-war-on-crypto)
+
+## Technical Details
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
