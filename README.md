@@ -14,6 +14,8 @@ Further Reading
 * [The Art of Applying Force](https://pacdao.substack.com/p/the-art-of-applying-force)
 * [The War on Crypto](https://pacdao.substack.com/p/the-war-on-crypto)
 
+---
+
 ## Technical Details
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
