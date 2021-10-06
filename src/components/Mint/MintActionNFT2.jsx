@@ -140,7 +140,6 @@ const MintActionNFT2 = () => {
         <Alerts status={state.status} blockHash={state.blockHash} errorMessage={state.errorMessage} />
         <Grid container justifyContent="center" alignItems="stretch">
           <TextField
-            className={classes.textfield}
             label="Your ETH amount"
             variant="outlined"
             style={{ margin: 8 }}
@@ -148,6 +147,7 @@ const MintActionNFT2 = () => {
             disabled
             value={commonPrice}
           />
+
           <TextField
             className={classes.textfield}
             label="Quantity"

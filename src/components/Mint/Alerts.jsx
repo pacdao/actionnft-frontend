@@ -1,6 +1,6 @@
 import { Grid } from "@material-ui/core";
 import { Alert } from "@material-ui/lab";
-import { TYPE } from "utils";
+import { TYPE } from "constant";
 
 const Alerts = ({ status, blockHash, message }) => {
   return (

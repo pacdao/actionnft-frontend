@@ -6,7 +6,6 @@ import { TabContext, TabPanel } from "@material-ui/lab";
 import MintCommonComp from "components/Mint/MintCommonComp";
 import MintRareComp from "components/Mint/MintRareComp";
 import MintActionNFT2 from "components/Mint/MintActionNFT2";
-import { COLOR } from "theme";
 
 const useStyles = makeStyles((theme) => ({
   root: {},

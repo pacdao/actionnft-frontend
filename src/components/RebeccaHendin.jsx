@@ -13,8 +13,12 @@ const RebeccaHendin = () => {
       </Typography>
 
       <div style={{ display: "flex", justifyContent: "center" }}>
-        <HrefLink href="https://www.rebeccahendin.com/">
-          <img alt="Rebecca Hendin" src="https://pbs.twimg.com/media/E_f3Cr0XsAgtOkR?format=jpg&name=small" />
+        <HrefLink isBold={false} href="https://www.rebeccahendin.com/">
+          <img
+            style={{ width: "100%" }}
+            alt="Rebecca Hendin"
+            src="https://pbs.twimg.com/media/E_f3Cr0XsAgtOkR?format=jpg&name=small"
+          />
         </HrefLink>
       </div>
 

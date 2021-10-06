@@ -140,7 +140,6 @@ const MintCommonComp = () => {
         <Alerts status={state.status} blockHash={state.blockHash} errorMessage={state.errorMessage} />
         <Grid item xs={12} container justifyContent="center" alignItems="stretch">
           <TextField
-            className={classes.textfield}
             label="Your ETH amount"
             variant="outlined"
             style={{ margin: 8 }}

@@ -1,4 +1,4 @@
-import { TYPE } from "utils";
+import { TYPE } from "constant";
 
 export function stateReducer(state, { type, payload }) {
   switch (type) {
