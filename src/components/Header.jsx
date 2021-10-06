@@ -1,8 +1,7 @@
 import * as React from "react";
-import AppBar from "@material-ui/core/AppBar";
-import logo from "assets/logo2x.png";
+import { AppBar, Container, makeStyles, Toolbar } from "@material-ui/core";
 
-import { makeStyles } from "@material-ui/core";
+import logo from "assets/logo2x.png";
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -12,6 +11,9 @@ const useStyles = makeStyles((theme) => ({
     "&.MuiAppBar-colorPrimary": {
       backgroundColor: "rgba(0,0,0,0) !important",
     },
+  },
+  logo: {
+    marginLeft: "1rem",
   },
   img: {
     width: "50px",
@@ -25,12 +27,17 @@ const useStyles = makeStyles((theme) => ({
 
 const Header = () => {
   const classes = useStyles();
+
   return (
-    <AppBar elevation={0} position="static" className={classes.appBar}>
-      <a href="https://www.pac.xyz/" target="_blank" rel="noreferrer">
-          <img alt="PAC Crypto Activism" src={logo} className={classes.img} />
-        </a>
-    </AppBar>
+    <Container maxWidth="lg">
+      <AppBar elevation={0} position="static" className={classes.appBar}>
+        <Toolbar className={classes.logo}>
+          <a href="https://www.pac.xyz/" target="_blank" rel="noreferrer">
+            <img alt="PAC Crypto Activism" src={logo} className={classes.img} />
+          </a>
+        </Toolbar>
+      </AppBar>
+    </Container>
   );
 };
 

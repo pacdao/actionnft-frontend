@@ -10,15 +10,15 @@ import { getABI } from "utils";
 import pacImageCommon from "assets/hendlinCommon.jpg";
 import ProgressBtn from "components/ProgressBtn";
 import Alerts from "components/Mint/Alerts";
-import useStyles from "./useStyles";
-import { stateReducer } from "./utils";
 import RebeccaHendin from "components/RebeccaHendin";
+import useStyles from "components/Mint/useStyles";
+import { stateReducer } from "components/Mint/utils";
 
 const DEPLOYMENT_MAP_ADDRESS = "1";
 
 const address = deploymentMap[DEPLOYMENT_MAP_ADDRESS]["ActionNFT"][0];
 
-const MintCommonComp = () => {
+const MintActionNFT2 = () => {
   const classes = useStyles();
   const { account, provider, signer } = useEthersProvider();
 
@@ -136,9 +136,9 @@ const MintCommonComp = () => {
           <img className={classes.img} alt="PAC Crypto Activism NFT" src={pacImageCommon} />
         </Grow>
       </Grid>
-      <Grid item xs={12} container justifyContent="center">
+      <Grid item xs={12}>
         <Alerts status={state.status} blockHash={state.blockHash} errorMessage={state.errorMessage} />
-        <Grid item xs={12} container justifyContent="center" alignItems="stretch">
+        <Grid container justifyContent="center" alignItems="stretch">
           <TextField
             className={classes.textfield}
             label="Your ETH amount"
@@ -190,12 +190,12 @@ const MintCommonComp = () => {
         </Grid>
       </Grid>
       <Grid item container xs={12} justifyContent="center">
-        <Grid item xs={12} container direction="column" justifyContent="center" alignItems="center">
+        <Grid item md={6} xs={12} container direction="column" justifyContent="center" alignItems="center">
           <Typography display="block" style={{ margin: "1rem 0" }} gutterBottom>
             <center>
               Mint NFT now for <b>{commonPrice} ETH</b>
               <br />
-              Total minted so far <b>{totalSupply} of 3000</b>
+              Total minted so far <b>{totalSupply} of 300</b>
             </center>
           </Typography>
         </Grid>
@@ -203,15 +203,10 @@ const MintCommonComp = () => {
       <Grid item container xs={12} justifyContent="center">
         <Grid item md={8} xs={12}>
           <RebeccaHendin />
-          <Typography display="block" style={{ margin: "1rem 0" }} gutterBottom>
-            If we succeed, then we've come from nowhere to save cryptocurrency from bureaucratic meddling. If we fail,
-            you can burn your common NFTs for a 90% refund for up to 30 days after the session ends or keep them as a
-            souvenir.
-          </Typography>
         </Grid>
       </Grid>
     </Grid>
   );
 };
 
-export default MintCommonComp;
+export default MintActionNFT2;

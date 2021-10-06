@@ -13,16 +13,17 @@ import {
   TableHead,
   TableRow,
   TextField,
-	Typography,
+  Typography,
 } from "@material-ui/core";
 
 import { useEthersProvider } from "contexts/EthersContext";
 import deploymentMap from "artifacts/deployments/map.json";
-import { TYPE } from "utils";
+import { TYPE } from "constant";
+import { getABI } from "utils";
 import pacImageRare from "assets/hendlinRare.jpg";
 import ProgressBtn from "components/ProgressBtn";
 import Alerts from "components/Mint/Alerts";
-import { getABI } from "pages/main";
+import RebeccaHendin from "components/RebeccaHendin";
 import { abbrAddress } from "utils";
 import useStyles from "./useStyles";
 import { stateReducer } from "./utils";
@@ -59,12 +60,13 @@ const MintRareComp = () => {
     });
   };
 
+  const { abi, bidPrice, contract, topBidders } = state;
+
   const getTopBidders = React.useCallback(async () => {
     try {
       dispatch({
         type: TYPE.pending,
       });
-      const { contract } = state;
       const fetchedTopBidders = await Promise.all([
         contract.topBidders(0),
         contract.topBidders(1),
@@ -83,15 +85,15 @@ const MintRareComp = () => {
       console.log("API ERROR fetchedTopBidders", error);
       dispatchError(error.message);
     }
-  }, [state.contract]);
+  }, [contract]);
 
   async function handleBid(evt) {
     evt.preventDefault();
     try {
       dispatch({ type: TYPE.pending, message: "Please be patient, this will take a bit of time." });
-      const eth = parseUnits(state.bidPrice, "ether");
+      const eth = parseUnits(bidPrice, "ether");
       const wei = formatUnits(eth, "wei");
-      const signerContract = new ethers.Contract(address, state.abi, signer);
+      const signerContract = new ethers.Contract(address, abi, signer);
       const txResp = await signerContract.bidRare({
         value: wei.toString(),
       });
@@ -104,10 +106,10 @@ const MintRareComp = () => {
   }
 
   React.useEffect(() => {
-    if (state.contract) {
+    if (contract) {
       getTopBidders();
     }
-  }, [state.contract]);
+  }, [abi, bidPrice, contract, getTopBidders]);
 
   // onMount
   React.useEffect(() => {
@@ -126,8 +128,6 @@ const MintRareComp = () => {
       }
     })();
   }, [provider]);
-
-  const { bidPrice, topBidders } = state;
 
   return (
     <Grid container spacing={3}>
@@ -202,22 +202,14 @@ const MintRareComp = () => {
               </Table>
             </TableContainer>
           ) : null}
-		<Typography>
-	  <center>
-	  <br/><br/>
-	  <strong>'The War on Crypto'</strong> features award-winning American artist <strong><a style={{color: '#000'}} href='https://www.rebeccahendin.com/' target='_blank'>Rebecca Hendin</a></strong>, whose art is regularly featured in BBC, and The Guardian. This limited series reflects the current state of US politics and their overarching stranglehold on crypto innovation.
-	  <a href='https://www.rebeccahendin.com/'><img src='https://pbs.twimg.com/media/E_f3Cr0XsAgtOkR?format=jpg&name=small'/></a>
-	  <br/><br/>
-	  We are <strong><a href='https://pac.xyz/' target='_blank' style={{color: '#000'}}>PAC DAO</a></strong> and we're bringing <strong><a target='_blank' style={{color: '#000'}} href='https://pacdao.substack.com/p/an-introduction-to-pac-dao'>political activism on chain</a></strong>. We have a mission to <strong><a href='https://pacdao.substack.com/p/the-renaissance-of-expression' target='_blank' style={{color: '#000'}}>effect positive change</a></strong> toward crypto.
-
-	  <br/><br/>
-	  All funds from the sale of the NFT go to politicians who provably act to support crypto.  These funds allow us to 
-<strong> <a href='https://pacdao.substack.com/p/the-art-of-applying-force' target='_blank' style={{color: '#000'}}> apply leverage</a></strong> toward our goal of removing crypto from the infrastructure bill.
-	  <br/><br/>
-	  Only five top bidders will get to keep the rare version of this NFT.  All others can claim a 100% refund.
-	</center>
-	  </Typography>
-
+        </Grid>
+      </Grid>
+      <Grid item container xs={12} justifyContent="center">
+        <Grid item md={8} xs={12}>
+          <RebeccaHendin />
+          <Typography display="block" style={{ margin: "1rem 0" }} gutterBottom>
+            Only five top bidders will get to keep the rare version of this NFT. All others can claim a 100% refund.
+          </Typography>
         </Grid>
       </Grid>
     </Grid>

@@ -3,6 +3,7 @@ import { unstable_createMuiStrictModeTheme as createTheme } from "@material-ui/c
 export const COLOR = {
   YELLOW: "#ffe331",
   TEXT_YELLOW: "#7d6f12",
+  BLACK: "#000000",
 };
 
 const theme = createTheme({
@@ -13,7 +14,7 @@ const theme = createTheme({
           backgroundColor: COLOR.YELLOW,
         },
         a: {
-          color: COLOR.YELLOW,
+          color: COLOR.BLACK,
         },
       },
     },
