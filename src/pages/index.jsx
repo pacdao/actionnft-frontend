@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Main = () => {
   const classes = useStyles();
-  const [tabValue, setTabValue] = React.useState(2);
+  const [tabValue, setTabValue] = React.useState("2");
 
   return (
     <Grid className={classes.root} container>
@@ -36,19 +36,19 @@ const Main = () => {
                       onChange={(_, newTabValue) => setTabValue(newTabValue)}
                       aria-label="mint tabs"
                     >
-                      <Tab label="Common" />
-                      <Tab label="Rare" />
-                      <Tab label="Uncommon" />
+                      <Tab value="0" label="Common" />
+                      <Tab value="1" label="Rare" />
+                      <Tab value="2" label="Uncommon" />
                     </Tabs>
                   </Grid>
                   <Grid item xs={12}>
-                    <TabPanel value={0} index={0}>
+                    <TabPanel value="0" index={0}>
                       <MintCommonComp />
                     </TabPanel>
-                    <TabPanel value={1} index={1}>
+                    <TabPanel value="1" index={1}>
                       <MintRareComp />
                     </TabPanel>
-                    <TabPanel value={2} index={2}>
+                    <TabPanel value="2" index={2}>
                       <MintActionNFT2 />
                     </TabPanel>
                   </Grid>

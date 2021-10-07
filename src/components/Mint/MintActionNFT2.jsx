@@ -52,7 +52,6 @@ const MintActionNFT2 = () => {
     async (value = 1) => {
       if (value >= 1) {
         try {
-	  console.log(value);
           const newMinPrice = (await contract.getCostMany(value))[0];
           return formatUnits(newMinPrice.toString(), 18);
         } catch (error) {
@@ -86,6 +85,7 @@ const MintActionNFT2 = () => {
       const [fetchedCommonPrice, fetchedTotalSupply] = await Promise.all([getCommonPrice(), getTotalMinted()]);
       dispatchSuccess({ commonPrice: fetchedCommonPrice, totalSupply: fetchedTotalSupply, blockHash });
     } catch (error) {
+      console.log("MINT_ACTION_NFT2 ERROR getABI", error);
       dispatchError(error.message);
     }
   }
@@ -105,7 +105,7 @@ const MintActionNFT2 = () => {
           });
         } catch (error) {
           dispatchError(error.message);
-          console.log("USEEFFECT API ERROR", error);
+          console.log("MINT_ACTION_NFT2 ERROR contract", error);
         }
       })();
     }
@@ -124,6 +124,7 @@ const MintActionNFT2 = () => {
           contract,
         });
       } catch (error) {
+        console.log("MINT_ACTION_NFT2 ERROR getABI", error);
         dispatchError(error.message);
       }
     })();
@@ -191,12 +192,10 @@ const MintActionNFT2 = () => {
       </Grid>
       <Grid item container xs={12} justifyContent="center">
         <Grid item md={6} xs={12} container direction="column" justifyContent="center" alignItems="center">
-          <Typography display="block" style={{ margin: "1rem 0" }} gutterBottom>
-            <center>
-              Mint NFT now for <b>{commonPrice} ETH</b>
-              <br />
-              Total minted so far <b>{totalSupply} of 300</b>
-            </center>
+          <Typography display="block" style={{ margin: "1rem 0", textAlign: "center" }} gutterBottom>
+            Mint NFT now for <b>{commonPrice} ETH</b>
+            <br />
+            Total minted so far <b>{totalSupply} of 300</b>
           </Typography>
         </Grid>
       </Grid>

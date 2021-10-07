@@ -190,12 +190,10 @@ const MintCommonComp = () => {
       </Grid>
       <Grid item container xs={12} justifyContent="center">
         <Grid item xs={12} container direction="column" justifyContent="center" alignItems="center">
-          <Typography display="block" style={{ margin: "1rem 0" }} gutterBottom>
-            <center>
-              Mint NFT now for <b>{commonPrice} ETH</b>
-              <br />
-              Total minted so far <b>{totalSupply} of 3000</b>
-            </center>
+          <Typography display="block" style={{ margin: "1rem 0", textAlign: "center" }} gutterBottom>
+            Mint NFT now for <b>{commonPrice} ETH</b>
+            <br />
+            Total minted so far <b>{totalSupply} of 3000</b>
           </Typography>
         </Grid>
       </Grid>
