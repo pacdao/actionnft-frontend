@@ -7,7 +7,7 @@ import { useEthersProvider } from "contexts/EthersContext";
 import deploymentMap from "artifacts/deployments/map.json";
 import { TYPE } from "constant";
 import { getABI } from "utils";
-import pacImageCommon from "assets/hendlinCommon.jpg";
+import pacImageCommon from "assets/uncommonNFT.gif";
 import ProgressBtn from "components/ProgressBtn";
 import Alerts from "components/Mint/Alerts";
 import RebeccaHendin from "components/RebeccaHendin";
@@ -16,8 +16,7 @@ import { stateReducer } from "components/Mint/utils";
 
 const DEPLOYMENT_MAP_ADDRESS = "1";
 
-const address = deploymentMap[DEPLOYMENT_MAP_ADDRESS]["ActionNFT"][0];
-
+const address = "0x45c10fa73bf02603c9ec552b9cfd84a7ad2dd237"; //deploymentMap[DEPLOYMENT_MAP_ADDRESS]["ActionNFT"][0];
 const MintActionNFT2 = () => {
   const classes = useStyles();
   const { account, provider, signer } = useEthersProvider();
@@ -53,6 +52,7 @@ const MintActionNFT2 = () => {
     async (value = 1) => {
       if (value >= 1) {
         try {
+	  console.log(value);
           const newMinPrice = (await contract.getCostMany(value))[0];
           return formatUnits(newMinPrice.toString(), 18);
         } catch (error) {
