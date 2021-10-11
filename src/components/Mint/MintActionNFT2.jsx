@@ -16,7 +16,7 @@ import { stateReducer } from "components/Mint/utils";
 
 const DEPLOYMENT_MAP_ADDRESS = "1";
 
-const address = "0x45c10fa73bf02603c9ec552b9cfd84a7ad2dd237"; //deploymentMap[DEPLOYMENT_MAP_ADDRESS]["ActionNFT"][0];
+const address = "0xB198936708ef94F494a4e753C44dCF8691cF7b87"; //deploymentMap[DEPLOYMENT_MAP_ADDRESS]["ActionNFT"][0];
 const MintActionNFT2 = () => {
   const classes = useStyles();
   const { account, provider, signer } = useEthersProvider();
@@ -196,6 +196,12 @@ const MintActionNFT2 = () => {
             Mint NFT now for <b>{commonPrice} ETH</b>
             <br />
             Total minted so far <b>{totalSupply} of 300</b>
+	  <br/><br/>
+	  <em>Funds from the "uncommon" NFT go to support the <br/>
+	  Congressional scorecard project and have no refund mechanic.</em>
+	  <br/>
+	  <br/>
+	  Published at <a href='https://etherscan.io/address/0xb198936708ef94f494a4e753c44dcf8691cf7b87' target='_blank'>0xb198936708ef94f494a4e753c44dcf8691cf7b87</a>
           </Typography>
         </Grid>
       </Grid>

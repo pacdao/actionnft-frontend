@@ -194,6 +194,12 @@ const MintCommonComp = () => {
             Mint NFT now for <b>{commonPrice} ETH</b>
             <br />
             Total minted so far <b>{totalSupply} of 3000</b>
+	    <br/><br/>
+	    <em><strong>Eligible for 90% Refund</strong> if the infrastructure bill passes and <br/>no amendment was introduced to remove the crypto language</em>
+<br/><br/>
+	  Published at <a href='https://etherscan.io/address/0xe60a7825a80509de847ffe30ce2936dfc770db6b' target='_blank'
+	  >0xe60a7825a80509de847ffe30ce2936dfc770db6b</a>
+
           </Typography>
         </Grid>
       </Grid>

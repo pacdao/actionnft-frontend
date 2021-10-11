@@ -24,7 +24,7 @@ function App() {
 
   const isCorrectChain = React.useMemo(() => {
     // TODO: change to correct network once it is ready
-    return chainId !== null && chainId === 4;
+    return chainId !== null && chainId === 1;
   }, [chainId]);
 
   return (

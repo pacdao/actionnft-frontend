@@ -202,6 +202,9 @@ const MintRareComp = () => {
               </Table>
             </TableContainer>
           ) : null}
+
+	  <br/><br/>
+	  Published at <a href='https://etherscan.io/address/0xd56c12efd06252f1f0098a8fe517da286245c0a8' target='_blank'>0xd56c12efd06252f1f0098a8fe517da286245c0a8</a>
         </Grid>
       </Grid>
       <Grid item container xs={12} justifyContent="center">
