@@ -36,9 +36,9 @@ const Main = () => {
                       onChange={(_, newTabValue) => setTabValue(newTabValue)}
                       aria-label="mint tabs"
                     >
-                      <Tab value="0" label="Common" />
-                      <Tab value="1" label="Rare" />
-                      <Tab value="2" label="Uncommon" />
+                      <Tab value="0" label="#1 Common" />
+                      <Tab value="1" label="#1 Rare" />
+                      <Tab value="2" label="#2 Uncommon" />
                     </Tabs>
                   </Grid>
                   <Grid item xs={12}>

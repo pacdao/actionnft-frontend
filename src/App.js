@@ -8,6 +8,7 @@ import pacImageCommon from "assets/hendlinCommon.jpg";
 import Header from "components/Header";
 import Footer from "components/Footer";
 import Main from "pages/index";
+import RebeccaHendin from "components/RebeccaHendin";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -83,7 +84,9 @@ function App() {
             <Button variant="contained" color="primary" size="large" onClick={connect} type="submit">
               Connect your wallet
             </Button>
+          <RebeccaHendin />
           </Grid>
+
         )}
 
         {provider && isCorrectChain && account && (
