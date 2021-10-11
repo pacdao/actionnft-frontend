@@ -7,7 +7,7 @@ import { useEthersProvider } from "contexts/EthersContext";
 import deploymentMap from "artifacts/deployments/map.json";
 import { TYPE } from "constant";
 import { getABI } from "utils";
-import pacImageCommon from "assets/uncommonNFT.gif";
+//import pacImageCommon from "assets/uncommonNFT.gif";
 import ProgressBtn from "components/ProgressBtn";
 import Alerts from "components/Mint/Alerts";
 import RebeccaHendin from "components/RebeccaHendin";
@@ -134,7 +134,7 @@ const MintActionNFT2 = () => {
     <Grid container spacing={3}>
       <Grid item xs={12} container justifyContent="center">
         <Grow in disableStrictModeCompat style={{ transformOrigin: "0 0 0 0" }} timeout={1000}>
-          <img className={classes.img} alt="PAC Crypto Activism NFT" src={pacImageCommon} />
+          <img className={classes.img} alt="PAC Crypto Activism NFT" src="https://gateway.pinata.cloud/ipfs/Qmapre2cXJ7SzQFRLZ6ADNorqLaNdRkchBEY1KGjwqVKvC" />
         </Grow>
       </Grid>
       <Grid item xs={12}>
