@@ -191,16 +191,16 @@ const MintCommonComp = () => {
       <Grid item container xs={12} justifyContent="center">
         <Grid item xs={12} container direction="column" justifyContent="center" alignItems="center">
           <Typography display="block" style={{ margin: "1rem 0", textAlign: "center" }} gutterBottom>
-            Final Mint Price: <b>{commonPrice} ETH</b>
+            Last Mint Price: <b>{commonPrice} ETH</b>
             <br />
             Total minted <b>{totalSupply}</b>
 	    <br/><br/>
 	    <em><strong>Eligible for 90% Refund</strong>
-            <br/>The infrastructure bill passed and no Congressperson introduced an amendment was introduced to remove the crypto language</em>.
+            <br/>The infrastructure bill passed and no Congressperson introduced an amendment to remove the crypto language</em>.
             <br/>If you still own the same quantity (or more) of original pieces, you can burn them for a 90% refund until December 6.<br/><br/>
           <strong>Instructions</strong>
           <br/>
-            1. Visit the write contract section of the <a href='https://etherscan.io/address/0xe60a7825a80509de847ffe30ce2936dfc770db6b#writeContract'>contract on Etherscan</a><br/>
+            1. Visit the write contract section <a href='https://etherscan.io/address/0xe60a7825a80509de847ffe30ce2936dfc770db6b#writeContract'>on Etherscan</a><br/>
             2. Connect your wallet<br/>
             3. Click 'refundAll'<br/>
                 <br/> 
@@ -212,7 +212,7 @@ const MintCommonComp = () => {
           If you have fewer than your original quantity of NFTs, you will need to restore your balance to burn.
 
                 <br/>
-          Once you burn, you will also not be able to use this NFT to claim your <a href='https://github.com/pacdao/bonus-nft' target='_blank'>free bonus NFT</a>, so you may wish to claim this bonus before you burn.
+  If you plan to claim your <a href='https://github.com/pacdao/bonus-nft' target='_blank'>free bonus NFT</a>, make sure to do so before burning.
 
           <br/>
           <br/>
