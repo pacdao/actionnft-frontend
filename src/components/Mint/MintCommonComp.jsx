@@ -181,21 +181,43 @@ const MintCommonComp = () => {
             size="large"
             loading={state.status === TYPE.pending}
             handleClick={handleMint}
-            disabled={!account || state.status === TYPE.pending}
+            disabled="true"
             type="submit"
           >
-            Mint
+            Sale Ended
           </ProgressBtn>
         </Grid>
       </Grid>
       <Grid item container xs={12} justifyContent="center">
         <Grid item xs={12} container direction="column" justifyContent="center" alignItems="center">
           <Typography display="block" style={{ margin: "1rem 0", textAlign: "center" }} gutterBottom>
-            Mint NFT now for <b>{commonPrice} ETH</b>
+            Final Mint Price: <b>{commonPrice} ETH</b>
             <br />
-            Total minted so far <b>{totalSupply} of 3000</b>
+            Total minted <b>{totalSupply}</b>
 	    <br/><br/>
-	    <em><strong>Eligible for 90% Refund</strong> if the infrastructure bill passes and <br/>no amendment was introduced to remove the crypto language</em>
+	    <em><strong>Eligible for 90% Refund</strong>
+            <br/>The infrastructure bill passed and no Congressperson introduced an amendment was introduced to remove the crypto language</em>.
+            <br/>If you still own the same quantity (or more) of original pieces, you can burn them for a 90% refund until December 6.<br/><br/>
+          <strong>Instructions</strong>
+          <br/>
+            1. Visit the write contract section of the <a href='https://etherscan.io/address/0xe60a7825a80509de847ffe30ce2936dfc770db6b#writeContract'>contract on Etherscan</a><br/>
+            2. Connect your wallet<br/>
+            3. Click 'refundAll'<br/>
+                <br/> 
+            If you have any issues, check our <a href='https://discord.gg/Y95mnqewpb'>Discord</a>.  
+               <br/>
+          After December 6, refunds will be automatically disabled.
+
+               <br/>
+          If you have fewer than your original quantity of NFTs, you will need to restore your balance to burn.
+
+                <br/>
+          Once you burn, you will also not be able to use this NFT to claim your <a href='https://github.com/pacdao/bonus-nft' target='_blank'>free bonus NFT</a>, so you may wish to claim this bonus before you burn.
+
+          <br/>
+          <br/>
+                <hr/>
+
 <br/><br/>
 	  Published at <a href='https://etherscan.io/address/0xe60a7825a80509de847ffe30ce2936dfc770db6b' target='_blank'
 	  >0xe60a7825a80509de847ffe30ce2936dfc770db6b</a>
