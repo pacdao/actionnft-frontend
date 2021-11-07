@@ -165,8 +165,9 @@ const MintCommonComp = () => {
 
       <Grid item xs={12} container justifyContent="center">
 
-
-            Your Total Mint Quantity: {totalSupply}
+          Address: {account}
+          <br/>
+          Total Mint Quantity: {totalSupply}
 	  <br/>
 	  Current Balance: {commonPrice}
 	  <br/>
@@ -196,6 +197,7 @@ const MintCommonComp = () => {
       </Grid>
       <Grid item container xs={12} justifyContent="center">
         <Grid item md={8} xs={12}>
+	    <em>{ totalSupply == 0 || commonPrice == 0 || commonPrice < totalSupply ? "This button is disabled because your account does not meet the refund criteria.  Please check and correct these criteria, or reach out in the Discord if you need help." : ""}</em>
 	  <hr/>
 <center>
           <strong>Alternate Instructions</strong>
