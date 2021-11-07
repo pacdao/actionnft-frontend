@@ -41,6 +41,8 @@ const MintRareComp = () => {
     abi: null,
     blockHash: "",
     bidPrice: "",
+    withdrawableBalance: "",
+    topBidderStatus: "",
     topBidders: [],
     message: "",
     status: null,
@@ -60,7 +62,39 @@ const MintRareComp = () => {
     });
   };
 
-  const { abi, bidPrice, contract, topBidders } = state;
+  const { abi, bidPrice, contract, topBidders, withdrawableBalance, topBidderStatus} = state;
+
+  const getWithdrawableBalance = React.useCallback(async () => {
+    try {
+      const fetchedWithdrawable = (await contract.withdrawableBalance(account)).toString();
+      dispatchSuccess({
+              withdrawableBalance: fetchedWithdrawable
+        }
+      );
+      console.log(fetchedWithdrawable);
+      return fetchedWithdrawable;
+    } catch (error) {
+      console.log("API ERROR totalSupply", error);
+      throw error;
+    }
+  }, [contract]);
+
+
+  const getTopBidderStatus = React.useCallback(async () => {
+    try {
+      const fetchedTopBidderStatus = (await contract.isTopBidder(account)).toString();
+      dispatchSuccess({
+              topBidderStatus: fetchedTopBidderStatus
+        }
+      );
+      console.log("TB", fetchedTopBidderStatus);
+      return fetchedTopBidderStatus;
+    } catch (error) {
+      console.log("API ERROR totalSupply", error);
+      throw error;
+    }
+  }, [contract]);
+
 
   const getTopBidders = React.useCallback(async () => {
     try {
@@ -75,6 +109,7 @@ const MintRareComp = () => {
         contract.topBidders(4),
       ]);
       dispatchSuccess({
+
         topBidders: fetchedTopBidders
           .map((b) => {
             return b.toString();
@@ -87,7 +122,7 @@ const MintRareComp = () => {
     }
   }, [contract]);
 
-  async function handleBid(evt) {
+  async function handleBidOld(evt) {
     evt.preventDefault();
     try {
       dispatch({ type: TYPE.pending, message: "Please be patient, this will take a bit of time." });
@@ -105,11 +140,27 @@ const MintRareComp = () => {
     }
   }
 
+  async function handleBid(evt) {
+    evt.preventDefault();
+    try {
+      dispatch({ type: TYPE.pending, message: "Please be patient, this will take a bit of time." });
+      const signerContract = new ethers.Contract(address, abi, signer);
+      const txResp = await signerContract.withdraw();
+      const { blockHash } = await txResp.wait();
+      getTopBidders();
+      dispatchSuccess({ message: `Success, your withdrawl has processed`, blockHash });
+    } catch (error) {
+      dispatchError(error.message);
+    }
+  }
+
   React.useEffect(() => {
     if (contract) {
       getTopBidders();
+      getWithdrawableBalance();
+      getTopBidderStatus();
     }
-  }, [abi, bidPrice, contract, getTopBidders]);
+  }, [abi, bidPrice, contract, getTopBidders, withdrawableBalance, topBidderStatus]);
 
   // onMount
   React.useEffect(() => {
@@ -136,33 +187,6 @@ const MintRareComp = () => {
           <img className={classes.img} alt="PAC Crypto Activism NFT" src={pacImageRare} />
         </Grow>
       </Grid>
-      <Grid item xs={12}>
-        <Alerts status={state.status} blockHash={state.blockHash} errorMessage={state.errorMessage} />
-        <Grid container justifyContent="center" alignItems="stretch" style={{ margin: "16px 0" }}>
-          <TextField
-            className={classes.textfield}
-            label="Your Bid (units of .01)"
-            variant="outlined"
-            onChange={({ target: { value } }) => {
-              dispatchSuccess({ bidPrice: value });
-            }}
-            disabled={!account}
-            value={bidPrice}
-          />
-          <ProgressBtn
-            className={classes.mintBtn}
-            variant="contained"
-            color="primary"
-            size="large"
-            loading={state.status === TYPE.pending}
-            handleClick={handleBid}
-            disabled={!account || state.status === TYPE.pending}
-            type="submit"
-          >
-            Bid
-          </ProgressBtn>
-        </Grid>
-      </Grid>
       <Grid item container xs={12} justifyContent="center">
         <Grid item md={6} xs={12} container direction="column" justifyContent="center" alignItems="center">
           {Array.isArray(topBidders) ? (
@@ -170,7 +194,7 @@ const MintRareComp = () => {
               <Table size="small">
                 <TableHead>
                   <TableRow>
-                    <TableCell>Current top 5 bidders* </TableCell>
+                    <TableCell>Winners</TableCell>
                     <TableCell>Amounts (ETH)</TableCell>
                   </TableRow>
                 </TableHead>
@@ -186,27 +210,65 @@ const MintRareComp = () => {
                   })}
                 </TableBody>
                 <caption>
-                  *The top five bidders will get to take home a copy of this rare artwork. All else can claim a 100%
+                  *The top five bidders received a copy of this rare artwork. All else can claim a 100%
                   refund within 30 days of auction end.
                   <br />
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    size="small"
-                    style={{ marginTop: 8 }}
-                    onClick={getTopBidders}
-                  >
-                    Get latest bidders
-                  </Button>
+                 
                 </caption>
               </Table>
             </TableContainer>
           ) : null}
 
 	  <br/><br/>
-	  Published at <a href='https://etherscan.io/address/0xd56c12efd06252f1f0098a8fe517da286245c0a8' target='_blank'>0xd56c12efd06252f1f0098a8fe517da286245c0a8</a>
+	  Published at 0xd56c12efd06252f1f0098a8fe517da286245c0a8
+          <a href='https://etherscan.io/address/0xd56c12efd06252f1f0098a8fe517da286245c0a8' target='_blank'>&bull; Etherscan</a>
+          <a href='https://opensea.io/collection/pacdao-action-nft-rare'>&bull; OpenSea</a>
         </Grid>
       </Grid>
+      <Grid item xs={12}>
+        <Alerts status={state.status} blockHash={state.blockHash} errorMessage={state.errorMessage} />
+        <Grid container justifyContent="center" alignItems="stretch" style={{ margin: "16px 0" }}>
+        
+
+          <Typography>
+          <strong>Your Results</strong><br/>
+          Address: {account}<br/>
+
+          Balance (Wei): {withdrawableBalance} 
+          <br/>
+          Auction Winner: {topBidderStatus} 
+          <br/><br/>
+          <hr/>
+          <strong>Refund</strong>
+          <br/>
+          If you placed a bid and lost, you can withdraw all your money until December 6.
+          <br/><br/>
+       <strong>Refund Criteria</strong> <br/>
+	{ topBidderStatus == true ? "❌ You Won" : "✅ You Did Not Win"}<br/>
+	{ withdrawableBalance == 0 ? "❌ You Have No Balance to Withdraw" : "✅ You Have a Withdrawable Balance"}<br/>
+        { withdrawableBalance == 0 || topBidderStatus == true ? "❌ You Cannot Refund" :  "✅ You May Withdraw" }
+          </Typography>
+        </Grid>
+        <Grid container justifyContent="center" alignItems="stretch" style={{ margin: "16px 0" }}>
+          <ProgressBtn
+            className={classes.mintBtn}
+            variant="contained"
+            color="primary"
+            size="large"
+            loading={state.status === TYPE.pending}
+            handleClick={handleBid}
+            disabled={topBidderStatus == true || withdrawableBalance == 0}
+            type="submit"
+          >
+            Refund
+          </ProgressBtn>
+        </Grid>
+        <Grid container justifyContent="center" alignItems="stretch" style={{ margin: "16px 0" }}>
+
+        { withdrawableBalance == 0 || topBidderStatus == true ? "You are ineligible for a refund so this button is disabled.  If you think this is in error please contact us in Discord" :  "" }
+        </Grid>
+      </Grid>
+
       <Grid item container xs={12} justifyContent="center">
         <Grid item md={8} xs={12}>
           <RebeccaHendin />
